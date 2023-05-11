@@ -13,8 +13,8 @@ provider "aws" {
 }
 
 resource "aws_instance" "af_server" {
-  ami           = "ami-0889a44b331db0194"
-  instance_type = "t2.micro"
+  #ami           = "ami-0889a44b331db0194"
+  #instance_type = "t2.micro"
 
   tags = {
     Name = "AFServer"
