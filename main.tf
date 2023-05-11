@@ -12,11 +12,17 @@ provider "aws" {
     region  = "us-east-1"
 }
 
-resource "aws_instance" "af_server" {
-  ami           = "ami-0889a44b331db0194"
-  instance_type = "t2.nano"
+# Define instance type as a variable
+variable "instance_type" {
+    type = string
+  
+}
 
-  tags = {
-    Name = "AFServer"
+resource "aws_instance" "af_server" {
+    ami           = "ami-0889a44b331db0194"
+    instance_type = var.instance_type
+
+    tags = {
+        Name = "AFServer"
   }
 }
